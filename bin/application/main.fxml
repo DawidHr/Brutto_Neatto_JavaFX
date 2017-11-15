@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="348.0" minWidth="302.0" prefHeight="348.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="21.0" prefHeight="43.0" prefWidth="284.0" text="KALKULATOR WALUT" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="88.0" text="Kwota:" />
+      <Label layoutX="51.0" layoutY="124.0" text="Na:" />
+      <Label layoutX="47.0" layoutY="158.0" text="Podatek" />
+      <Label layoutX="43.0" layoutY="217.0" text="Wynik to: " />
+      <Label fx:id="score" layoutX="167.0" layoutY="217.0" text="0.0" />
+      <TextField fx:id="moneyField" layoutX="101.0" layoutY="84.0" />
+      <ComboBox fx:id="vatComboBox" layoutX="100.0" layoutY="154.0" prefWidth="150.0" />
+      <RadioButton fx:id="netto" layoutX="101.0" layoutY="124.0" mnemonicParsing="false" text="Netto">
+         <toggleGroup>
+            <ToggleGroup fx:id="RadioButtonGroup" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="brutto" layoutX="183.0" layoutY="124.0" mnemonicParsing="false" text="Brutto" toggleGroup="$RadioButtonGroup" />
+      <Button layoutX="45.0" layoutY="262.0" mnemonicParsing="false" onAction="#countScore" prefHeight="25.0" prefWidth="202.0" text="OBLICZ" />
+   </children>
+</AnchorPane>
