@@ -34,13 +34,14 @@ public class MainController implements Initializable {
 	}
 
 	public void countScore(ActionEvent event) {
-		boolean isOk = isNumberOK();
+		String textNumberfromTextField = moneyField.getText();
+		boolean isOk = isNumberOK(textNumberfromTextField);
 		if (isOk) {
 			double number = Double.parseDouble(moneyField.getText());
 			double vat = getVat();
-			int radioButtonSelected =getSelectedRadioButto();
-			if (radioButtonSelected==1) {
-				double number1 = (vat * number)/(vat+1.0);
+			int radioButtonSelected = getSelectedRadioButto();
+			if (radioButtonSelected == 1) {
+				double number1 = (vat * number) / (vat + 1.0);
 				number = number - number1;
 			} else {
 				vat = vat + 1.0;
@@ -52,10 +53,9 @@ public class MainController implements Initializable {
 		}
 	}
 
-	public boolean isNumberOK() {
-		String text = moneyField.getText();
+	public boolean isNumberOK(String text) {
 		try {
-			double number = Double.parseDouble(text);
+			double d = Double.parseDouble(text);
 			return true;
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -63,13 +63,13 @@ public class MainController implements Initializable {
 		}
 	}
 
-public int getSelectedRadioButto() {
-	if(netto.isSelected())
-		return 1;
-	else
-		return 2;
-}
-	
+	public int getSelectedRadioButto() {
+		if (netto.isSelected())
+			return 1;
+		else
+			return 2;
+	}
+
 	public double getVat() {
 		String vat = vatComboBox.getSelectionModel().getSelectedItem().toString();
 		System.out.println(vat);
